@@ -52,6 +52,9 @@ const styles = (theme) => ({
     backgroundColor: "#28787c",
     borderRadius: "0px",
     color: "white",
+    "&:hover": {
+      backgroundColor: "#349DA3",
+    },
   },
   newNoteCancelBtn: {
     width: "100%",
