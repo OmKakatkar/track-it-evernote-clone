@@ -12,14 +12,17 @@ const App = () => {
   const [notes, setNotes] = useState(null);
 
   useEffect(() => {
-    fireStore.collection("notes").onSnapshot((snap) => {
-      const notes = snap.docs.map((doc) => {
-        const data = doc.data();
-        data["id"] = doc.id;
-        return data;
+    fireStore
+      .collection("notes")
+      .orderBy("createdAt", "desc")
+      .onSnapshot((snap) => {
+        const notes = snap.docs.map((doc) => {
+          const data = doc.data();
+          data["id"] = doc.id;
+          return data;
+        });
+        setNotes(notes);
       });
-      setNotes(notes);
-    });
   }, []);
 
   const selectNote = (note, index) => {
