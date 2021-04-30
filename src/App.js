@@ -52,7 +52,7 @@ const App = () => {
     const newID = newFromDB.id;
     await setNotes([...notes, note]);
     const newNoteIndex = notes.indexOf(
-      notes.filter((note) => note.id === newID)[0]
+      notes.filter((_note) => _note.id === newID)[0]
     );
     setSelectedNote(notes[newNoteIndex]);
     setSelectedNoteIndex(newNoteIndex);
@@ -60,7 +60,7 @@ const App = () => {
 
   const deleteNote = async (note) => {
     const noteIndex = notes.indexOf(note);
-    await setNotes(notes.filter((note) => note !== note));
+    await setNotes(notes.filter((_note) => _note !== note));
     if (selectedNoteIndex === noteIndex) {
       setSelectedNoteIndex(null);
       setSelectedNote(null);
