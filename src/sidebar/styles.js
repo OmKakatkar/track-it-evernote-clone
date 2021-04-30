@@ -30,7 +30,7 @@ const styles = (theme) => ({
   sidebarContainer: {
     marginTop: "0px",
     width: "300px",
-    height: "100vh",
+    height: "100%",
     boxSizing: "border-box",
     float: "left",
     overflowY: "scroll",
@@ -52,6 +52,17 @@ const styles = (theme) => ({
     backgroundColor: "#28787c",
     borderRadius: "0px",
     color: "white",
+  },
+  newNoteCancelBtn: {
+    width: "100%",
+    height: "35px",
+    borderBottom: "1px solid black",
+    borderRadius: "0px",
+    backgroundColor: "#dc0000",
+    color: "white",
+    "&:hover": {
+      backgroundColor: "#f24f40",
+    },
   },
 });
 

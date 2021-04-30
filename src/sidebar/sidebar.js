@@ -37,8 +37,8 @@ const SidebarComponent = (props) => {
   if (props.notes) {
     return (
       <div className={classes.sidebarContainer}>
-        <Button onClick={newNoteBtnClick} className={classes.newNoteBtn}>
-          {addingNote ? "Cancel" : "New Note"}
+        <Button onClick={newNoteBtnClick} className={addingNote ? classes.newNoteCancelBtn :classes.newNoteBtn}>
+          {addingNote ? "Cancel" : "Add Note"}
         </Button>
         {addingNote ? (
           <div>
