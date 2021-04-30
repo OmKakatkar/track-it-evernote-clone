@@ -12,7 +12,9 @@ const App = () => {
   const [notes, setNotes] = useState(null);
 
   useEffect(() => {
-    fireStore.collection("notes").onSnapshot((snap) => {
+    fireStore.collection("notes")
+    .orderBy('timestamp','desc')
+    .onSnapshot((snap) => {
       const notes = snap.docs.map((doc) => {
         const data = doc.data();
         data["id"] = doc.id;
